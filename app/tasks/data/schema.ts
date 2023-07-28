@@ -11,3 +11,11 @@ export const taskSchema = z.object({
 })
 
 export type Task = z.infer<typeof taskSchema>
+
+export const stharSchema = z.object({
+  STOK_KODU: z.string(),
+  FISNO: z.string(),
+  STHAR_TARIH: z.string(),
+  STHAR_GCMIK: z.string(),
+  STHAR_NF: z.string(),
+})

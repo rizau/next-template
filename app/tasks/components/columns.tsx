@@ -2,7 +2,7 @@
 
 import { ColumnDef } from "@tanstack/react-table"
 
-//import { Badge } from "@/registry/new-york/ui/badge"
+import { Badge } from "@/components/ui/badge"
 import { Checkbox } from "@/components/ui/checkbox"
 
 import { labels, priorities, statuses } from "../data/data"
@@ -51,8 +51,8 @@ export const columns: ColumnDef<Task>[] = [
 
       return (
         <div className="flex space-x-2">
-          {/*label && <Badge variant="outline">{label.label}</Badge>*/}
-          {label}
+          {label && <Badge variant="outline">{label.label}</Badge>}
+
           <span className="max-w-[500px] truncate font-medium">
             {row.getValue("title")}
           </span>
