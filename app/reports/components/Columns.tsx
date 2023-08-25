@@ -16,6 +16,11 @@ export const getColumns = (columns: ReportColumnType[]): ColumnDef<any>[] => {
     cell: ({ row }) => <div className="w-[80px]">{row.getValue(col.key)}</div>,
     enableSorting: true,
     enableHiding: true,
+    enableColumnFilter: true,
+    enableGlobalFilter: true,
+    /*filterFn: (row, id, value) => {
+      return value.includes(row.getValue(id))
+    },*/
   }))
 }
 /*

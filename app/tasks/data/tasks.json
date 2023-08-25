@@ -60,7 +60,7 @@
     "title": "We need to program the back-end THX pixel!",
     "status": "todo",
     "label": "feature",
-    "priority": "low"
+    "priority": "0"
   },
   {
     "id": "TASK-5160",

@@ -55,7 +55,7 @@ export const statuses = [
 export const priorities = [
   {
     label: "Low",
-    value: "low",
+    value: "0",
     icon: ArrowDownIcon,
   },
   {

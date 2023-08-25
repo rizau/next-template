@@ -21,12 +21,12 @@ const prisma = new PrismaClient()
 
 // Simulate a database read for tasks.
 async function getTasks() {
-  /* const data = await fs.readFile(
+  const data = await fs.readFile(
     path.join(process.cwd(), "app/tasks/data/tasks.json")
-  )*/
-  //const tasks = JSON.parse(data.toString())
+  )
+  const tasks = JSON.parse(data.toString())
 
-  //return z.array(taskSchema).parse(tasks)
+  return z.array(taskSchema).parse(tasks)
 
   try {
     const tableName = ""

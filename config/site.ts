@@ -1,13 +1,17 @@
 export type SiteConfig = typeof siteConfig
 
 export const siteConfig = {
-  name: "Next.js",
-  description:
-    "Beautifully designed components built with Radix UI and Tailwind CSS.",
+  name: "Next",
+  description: "by RZU",
+  footer: { copyRightYear: 2023, copyRightName: "Rzu Software" },
   mainNav: [
     {
       title: "Home",
       href: "/",
+    },
+    {
+      title: "Invoices",
+      href: "/invoices",
     },
     {
       title: "Tasks",
@@ -16,6 +20,14 @@ export const siteConfig = {
     {
       title: "Reports",
       href: "/reports",
+    },
+    {
+      title: "Pages",
+      href: "/pager",
+    },
+    {
+      title: "Parameters",
+      href: "/parameters",
     },
   ],
   links: {

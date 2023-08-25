@@ -1,12 +1,16 @@
 import "@/styles/globals.css"
 import { Metadata } from "next"
 
+import "react-notifications-component/dist/theme.css"
 import { siteConfig } from "@/config/site"
 import { fontSans } from "@/lib/fonts"
 import { cn } from "@/lib/utils"
+import { Toaster } from "@/components/ui/toaster"
+import Footer from "@/components/footer"
+import Notification from "@/components/notification"
+import Providers from "@/components/providers"
 import { SiteHeader } from "@/components/site-header"
 import { TailwindIndicator } from "@/components/tailwind-indicator"
-import { ThemeProvider } from "@/components/theme-provider"
 
 export const metadata: Metadata = {
   title: {
@@ -40,13 +44,16 @@ export default function RootLayout({ children }: RootLayoutProps) {
             fontSans.variable
           )}
         >
-          <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <Providers>
             <div className="relative flex min-h-screen flex-col">
               <SiteHeader />
-              <div className="flex-1 container">{children}</div>
+              <Notification />
+              <div className="flex-1 container pt-5 pb-20">{children}</div>
+              <Toaster />
+              <Footer />
             </div>
             <TailwindIndicator />
-          </ThemeProvider>
+          </Providers>
         </body>
       </html>
     </>

@@ -1,3 +1,4 @@
+import { Metadata } from "next"
 import Link from "next/link"
 import { notFound } from "next/navigation"
 
@@ -52,4 +53,11 @@ const Reports = () => {
       {/*<ReportList />*/}
     </>
   )
+}
+export const metadata: Metadata = {
+  title: {
+    default: "Reports",
+    template: ``,
+  },
+  description: "",
 }

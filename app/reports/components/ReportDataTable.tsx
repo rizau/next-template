@@ -26,7 +26,7 @@ import {
 } from "@/components/ui/table"
 
 import { DataTablePagination } from "../../tasks/components/data-table-pagination"
-import { DataTableToolbar } from "../../tasks/components/data-table-toolbar"
+import { DataTableToolbar } from "../components/data-table-toolbar"
 import { getColumns } from "./Columns"
 
 interface DataTableProps<TData, TValue> {
@@ -57,6 +57,8 @@ export function ReportDataTable<TData, TValue>({
       columnFilters,
     },
     enableRowSelection: true,
+    enableColumnFilters: true,
+    enableGlobalFilter: true,
     onRowSelectionChange: setRowSelection,
     onSortingChange: setSorting,
     onColumnFiltersChange: setColumnFilters,

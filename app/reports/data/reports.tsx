@@ -55,4 +55,39 @@ export const reports: ReportType[] = [
       { key: "KOD_1", text: "K1" },
     ],
   },
+  {
+    id: "4",
+    name: "Rapor 4 özel parametreler",
+    data: async () => {
+      const items = await prisma.$queryRaw`select * from netsis..prgozelprm`
+      return JSON.stringify(items)
+    },
+    columns: [
+      { key: "GRUPKOD", text: "Grup" },
+      { key: "ANAHTAR", text: "Anahtar" },
+      { key: "DEGER", text: "Değer" },
+      { key: "SIRKET_KODU", text: "Şirket" },
+      { key: "SUBE_KODU", text: "Şube" },
+    ],
+  },
+  {
+    id: "5",
+    name: "Rapor 5 CümleUpdate50",
+    data: async () => {
+      const items =
+        await prisma.$queryRaw`select TOP 100000 SIRKET,INCKEYNO,ZAMAN,ISTEKNO,LOGINNAME,PCNAME,DBVERSIYON,OK,CONVERT(VARCHAR(max),HATA) AS HATA from netsis..cumleupdate50 ORDER BY ZAMAN DESC`
+      return JSON.stringify(items)
+    },
+    columns: [
+      { key: "SIRKET", text: "Şirket" },
+      { key: "INCKEYNO", text: "Inckeyno" },
+      { key: "ZAMAN", text: "Zaman" },
+      { key: "ISTEKNO", text: "İstekno" },
+      { key: "LOGINNAME", text: "Login Name" },
+      { key: "PCNAME", text: "PC Name" },
+      { key: "DBVERSIYON", text: "Db Versiyon" },
+      { key: "OK", text: "Ok" },
+      { key: "HATA", text: "Hata" },
+    ],
+  },
 ]

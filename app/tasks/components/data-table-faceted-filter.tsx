@@ -26,7 +26,7 @@ interface DataTableFacetedFilter<TData, TValue> {
   title?: string
   options: {
     label: string
-    value: string
+    value: string | number
     icon?: React.ComponentType<{ className?: string }>
   }[]
 }
@@ -37,7 +37,9 @@ export function DataTableFacetedFilter<TData, TValue>({
   options,
 }: DataTableFacetedFilter<TData, TValue>) {
   const facets = column?.getFacetedUniqueValues()
-  const selectedValues = new Set(column?.getFilterValue() as string[])
+  const selectedValues = new Set(column?.getFilterValue() as selectedType[])
+
+  type selectedType = string | number
 
   return (
     <Popover>
